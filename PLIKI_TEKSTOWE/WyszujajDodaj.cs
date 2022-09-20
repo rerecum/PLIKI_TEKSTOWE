@@ -26,5 +26,30 @@ namespace PLIKI_TEKSTOWE
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var dialog = new SaveFileDialog
+            {
+                Filter = "txt files (*.txt)|*.txt"
+            };
+
+            if (dialog.ShowDialog() != DialogResult.OK) return;
+
+            using (var stream = new StreamWriter(dialog.FileName,true))
+            {
+                stream.WriteLine(textBox3.Text);
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

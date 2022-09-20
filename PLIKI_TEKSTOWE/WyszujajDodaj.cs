@@ -34,20 +34,26 @@ namespace PLIKI_TEKSTOWE
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var dialog = new SaveFileDialog
-            {
-                Filter = "txt files (*.txt)|*.txt"
-            };
+            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-            if (dialog.ShowDialog() != DialogResult.OK) return;
-
-            using (var stream = new StreamWriter(dialog.FileName,true))
+            // zapisywanie do pliku
+            using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(docPath, "uczen.txt"),true))
             {
-                stream.WriteLine(textBox3.Text);
+                outputFile.WriteLine(textBox3.Text + " " + textBox4.Text + " " + textBox5.Text);
             }
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
         }

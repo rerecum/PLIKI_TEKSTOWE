@@ -95,7 +95,7 @@ namespace PLIKI_TEKSTOWE
             else
                 tak2 = true;
             if (textBox3.Text != txt0)
-                MessageBox.Show("Nieprawid³owa CZAPcza");
+                MessageBox.Show("Nieprawid³owoœæ twojego mózgu");
             else
                 tak3 = true;
             if (tak1 && tak2 && tak3 == true)

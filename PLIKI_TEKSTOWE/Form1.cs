@@ -7,10 +7,13 @@ namespace PLIKI_TEKSTOWE
             InitializeComponent();
         }
 
+        private void Captcha(object sender, EventArgs e)
+        {
+            
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text == "admin")
-                ;
 
         }
 
@@ -20,25 +23,27 @@ namespace PLIKI_TEKSTOWE
             List<string> images = paths.ToList();
             Random random = new Random();
             pictureBox1.ImageLocation = paths[random.Next(0, images.Count - 1)];
-            if (pictureBox1.ImageLocation.Contains("*.png"))
-            {
-                
-            }
-            else
-            {
-                
-            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (textBox2.Text == "Qwerty1@34")
-                ;
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if ((textBox1.Text == "admin") && (textBox2.Text == "Qwerty1@34") && (textBox3.Text == ""))
+                    ;
         }
     }
 }

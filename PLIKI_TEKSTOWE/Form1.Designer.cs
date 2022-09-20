@@ -104,6 +104,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(258, 23);
             this.textBox3.TabIndex = 6;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label5
             // 
@@ -125,6 +126,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Zaloguj";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 

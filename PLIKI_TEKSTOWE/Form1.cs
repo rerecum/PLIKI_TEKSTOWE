@@ -43,7 +43,7 @@ namespace PLIKI_TEKSTOWE
         private void button1_Click(object sender, EventArgs e)
         {
             if ((textBox1.Text == "admin") && (textBox2.Text == "Qwerty1@34") && (textBox3.Text == ""))
-                    ;
+                Application.Run(WyszujajDodaj());
         }
     }
 }

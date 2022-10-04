@@ -28,17 +28,17 @@
                     if (comboBox2.SelectedIndex == 0)
                     {
                         if (textBox1.Text == line.Split(' ')[0])
-                            textBox2.AppendText(line + "\n");
+                            textBox2.AppendText(line + "\r\n");
                     }
                     if (comboBox2.SelectedIndex == 2)
                     {
                         if (line.Split(' ')[0].Contains(textBox1.Text))
-                            textBox2.AppendText(line + "\n");
+                            textBox2.AppendText(line + "\r\n");
                     }
                     if (comboBox2.SelectedIndex == 1)
                     {
                         if (line.Split(' ')[0].StartsWith(textBox1.Text))
-                            textBox2.AppendText(line + "\n");
+                            textBox2.AppendText(line + "\r\n");
                     }
                 }
                 if (comboBox1.SelectedIndex == 1)
@@ -46,17 +46,17 @@
                     if (comboBox2.SelectedIndex == 0)
                     {
                         if (textBox1.Text == line.Split(' ')[1])
-                            textBox2.AppendText(line + "\n");
+                            textBox2.AppendText(line + "\r\n");
                     }
                     if (comboBox2.SelectedIndex == 2)
                     {
                         if (line.Split(' ')[1].Contains(textBox1.Text))
-                            textBox2.AppendText(line + "\n");
+                            textBox2.AppendText(line + "\r\n");
                     }
                     if (comboBox2.SelectedIndex == 1)
                     {
                         if (line.Split(' ')[1].StartsWith(textBox1.Text))
-                            textBox2.AppendText(line + "\n");
+                            textBox2.AppendText(line + "\r\n");
                     }
                 }
                 if (comboBox1.SelectedIndex == 2)
@@ -64,17 +64,17 @@
                     if (comboBox2.SelectedIndex == 0)
                     {
                         if (textBox1.Text == line.Split(' ')[2])
-                            textBox2.AppendText(line + "\n");
+                            textBox2.AppendText(line + "\r\n");
                     }
                     if (comboBox2.SelectedIndex == 2)
                     {
                         if (line.Split(' ')[2].Contains(textBox1.Text))
-                            textBox2.AppendText(line + "\n");
+                            textBox2.AppendText(line + "\r\n");
                     }
                     if (comboBox2.SelectedIndex == 1)
                     {
                         if (line.Split(' ')[2].StartsWith(textBox1.Text))
-                            textBox2.AppendText(line + "\n");
+                            textBox2.AppendText(line + "\r\n");
                     }
                 }
             }

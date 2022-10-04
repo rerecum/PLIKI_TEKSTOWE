@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace PLIKI_TEKSTOWE
+﻿namespace PLIKI_TEKSTOWE
 {
     public partial class WyszujajDodaj : Form
     {
@@ -30,47 +20,72 @@ namespace PLIKI_TEKSTOWE
         private void button1_Click(object sender, EventArgs e)
         {
             string[] lines = System.IO.File.ReadAllLines(@"C:\Users\student\Desktop\uczen.txt");
-            foreach (string line in lines) {
-                if (comboBox1.SelectedIndex == 0) {
+            textBox2.Text = "";
+            foreach (string line in lines)
+            {
+                if (comboBox1.SelectedIndex == 0)
+                {
                     if (comboBox2.SelectedIndex == 0)
                     {
                         if (textBox1.Text == line.Split(' ')[0])
-                            textBox2.AppendText(line + '\n');
-                    }
-                    if (comboBox2.SelectedIndex == 1)
-                    {
-                        if (textBox1.Text == line.Split(' ')[0])
-                            textBox2.AppendText(line + '\n');
+                            textBox2.AppendText(line + "\n");
                     }
                     if (comboBox2.SelectedIndex == 2)
                     {
-                        if (textBox1.Text == line.Split(' ')[0])
-                            textBox2.AppendText(line + '\n');
+                        if (line.Split(' ')[0].Contains(textBox1.Text))
+                            textBox2.AppendText(line + "\n");
+                    }
+                    if (comboBox2.SelectedIndex == 1)
+                    {
+                        if (line.Split(' ')[0].StartsWith(textBox1.Text))
+                            textBox2.AppendText(line + "\n");
                     }
                 }
-                if (comboBox1.SelectedIndex == 1) {
+                if (comboBox1.SelectedIndex == 1)
+                {
                     if (comboBox2.SelectedIndex == 0)
                     {
                         if (textBox1.Text == line.Split(' ')[1])
-                            textBox2.AppendText(line + '\n');
+                            textBox2.AppendText(line + "\n");
+                    }
+                    if (comboBox2.SelectedIndex == 2)
+                    {
+                        if (line.Split(' ')[1].Contains(textBox1.Text))
+                            textBox2.AppendText(line + "\n");
+                    }
+                    if (comboBox2.SelectedIndex == 1)
+                    {
+                        if (line.Split(' ')[1].StartsWith(textBox1.Text))
+                            textBox2.AppendText(line + "\n");
                     }
                 }
                 if (comboBox1.SelectedIndex == 2)
                 {
-                    if (comboBox2.SelectedIndex == 0) { 
+                    if (comboBox2.SelectedIndex == 0)
+                    {
                         if (textBox1.Text == line.Split(' ')[2])
-                            textBox2.AppendText(line + '\n');
+                            textBox2.AppendText(line + "\n");
+                    }
+                    if (comboBox2.SelectedIndex == 2)
+                    {
+                        if (line.Split(' ')[2].Contains(textBox1.Text))
+                            textBox2.AppendText(line + "\n");
+                    }
+                    if (comboBox2.SelectedIndex == 1)
+                    {
+                        if (line.Split(' ')[2].StartsWith(textBox1.Text))
+                            textBox2.AppendText(line + "\n");
                     }
                 }
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
-        { 
+        {
             string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
             // zapisywanie do pliku
-            using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(docPath, "uczen.txt"),true))
+            using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(docPath, "uczen.txt"), true))
             {
                 outputFile.WriteLine(textBox3.Text + " " + textBox4.Text + " " + textBox5.Text);
             }

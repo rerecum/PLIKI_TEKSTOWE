@@ -30,7 +30,39 @@ namespace PLIKI_TEKSTOWE
         private void button1_Click(object sender, EventArgs e)
         {
             string[] lines = System.IO.File.ReadAllLines(@"C:\Users\student\Desktop\uczen.txt");
-            
+            foreach (string line in lines) {
+                if (comboBox1.SelectedIndex == 0) {
+                    if (comboBox2.SelectedIndex == 0)
+                    {
+                        if (textBox1.Text == line.Split(' ')[0])
+                            textBox2.AppendText(line + '\n');
+                    }
+                    if (comboBox2.SelectedIndex == 1)
+                    {
+                        if (textBox1.Text == line.Split(' ')[0])
+                            textBox2.AppendText(line + '\n');
+                    }
+                    if (comboBox2.SelectedIndex == 2)
+                    {
+                        if (textBox1.Text == line.Split(' ')[0])
+                            textBox2.AppendText(line + '\n');
+                    }
+                }
+                if (comboBox1.SelectedIndex == 1) {
+                    if (comboBox2.SelectedIndex == 0)
+                    {
+                        if (textBox1.Text == line.Split(' ')[1])
+                            textBox2.AppendText(line + '\n');
+                    }
+                }
+                if (comboBox1.SelectedIndex == 2)
+                {
+                    if (comboBox2.SelectedIndex == 0) { 
+                        if (textBox1.Text == line.Split(' ')[2])
+                            textBox2.AppendText(line + '\n');
+                    }
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -60,6 +92,21 @@ namespace PLIKI_TEKSTOWE
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }

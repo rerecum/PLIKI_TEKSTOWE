@@ -29,7 +29,8 @@ namespace PLIKI_TEKSTOWE
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\student\Desktop\uczen.txt");
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -54,6 +55,11 @@ namespace PLIKI_TEKSTOWE
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

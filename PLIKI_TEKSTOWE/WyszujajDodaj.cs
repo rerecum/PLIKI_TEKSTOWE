@@ -34,7 +34,7 @@ namespace PLIKI_TEKSTOWE
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
+        { 
             string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
             // zapisywanie do pliku

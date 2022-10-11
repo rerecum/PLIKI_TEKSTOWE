@@ -1,4 +1,10 @@
-﻿namespace PLIKI_TEKSTOWE
+﻿using DevExpress.Data.Browsing;
+using Microsoft.Data.Sqlite;
+using System.Data;
+using System.Data.SqlClient;
+using System.Xml.Linq;
+
+namespace PLIKI_TEKSTOWE
 {
     public partial class WyszujajDodaj : Form
     {
@@ -83,16 +89,29 @@
         private void button2_Click(object sender, EventArgs e)
         {
 
+            string myConnection = "datasource=XXX;port=XXX;username=XXX;pass=XXX";
+            SqlConnection myConn = new SqlConnection(myConnection);
+            SqlDataAdapter myDataAdapter = new SqlDataAdapter();
+            SqlCommandBuilder cb = new SqlCommandBuilder(myDataAdapter);
+            myConn.Open();
+            DataSet ds = new DataSet();
 
+            SqlCommand cmd = new SqlCommand(myConnection);
+            cmd.CommandText = "INSERT INTO Table(Imie, Nazwisko, Klasa) values ('" + imie + "','" + nazwisko + "','" + klasa + "')";
+            cmd.ExecuteNonQuery();
 
-          /*  string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            // zapisywanie do pliku
-            using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(docPath, "uczen.txt"), true))
-            {
-                outputFile.WriteLine(textBox3.Text + " " + textBox4.Text + " " + textBox5.Text);
-            } */
+            myConn.Close();
         }
+
+
+
+        /*  string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+          // zapisywanie do pliku
+          using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(docPath, "uczen.txt"), true))
+          {
+              outputFile.WriteLine(textBox3.Text + " " + textBox4.Text + " " + textBox5.Text);
+          } */
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {

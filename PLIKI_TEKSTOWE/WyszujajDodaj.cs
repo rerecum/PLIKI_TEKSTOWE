@@ -3,6 +3,7 @@ using Microsoft.Data.Sqlite;
 using System.Data;
 using System.Data.SqlClient;
 using System.Xml.Linq;
+using static System.Windows.Forms.LinkLabel;
 
 namespace PLIKI_TEKSTOWE
 {
@@ -25,7 +26,80 @@ namespace PLIKI_TEKSTOWE
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\student\Desktop\uczen.txt");
+
+            string myConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\student\\source\\repos\\rerecum\\PLIKI_TEKSTOWE\\PLIKI_TEKSTOWE\\Database2.mdf;Integrated Security=True";
+            SqlConnection myConn = new SqlConnection(myConnection);
+            SqlDataAdapter myDataAdapter = new SqlDataAdapter();
+            SqlCommandBuilder cb = new SqlCommandBuilder(myDataAdapter);
+            myConn.Open();
+            DataSet ds = new DataSet();
+
+            SqlCommand cmd = new SqlCommand(myConnection);
+            cmd.Connection = myConn;
+
+            cmd.ExecuteQuery() = "SELECT * FROM [Table]" (string line in lines)
+            {
+                if (comboBox1.SelectedIndex == 0)
+                {
+                    if (comboBox2.SelectedIndex == 0)
+                    {
+                        if (textBox1.Text == line.Split(' ')[0])
+                            textBox2.AppendText(line + "\r\n");
+                    }
+                    if (comboBox2.SelectedIndex == 2)
+                    {
+                        if (line.Split(' ')[0].Contains(textBox1.Text))
+                            textBox2.AppendText(line + "\r\n");
+                    }
+                    if (comboBox2.SelectedIndex == 1)
+                    {
+                        if (line.Split(' ')[0].StartsWith(textBox1.Text))
+                            textBox2.AppendText(line + "\r\n");
+                    }
+                }
+                if (comboBox1.SelectedIndex == 1)
+                {
+                    if (comboBox2.SelectedIndex == 0)
+                    {
+                        if (textBox1.Text == line.Split(' ')[1])
+                            textBox2.AppendText(line + "\r\n");
+                    }
+                    if (comboBox2.SelectedIndex == 2)
+                    {
+                        if (line.Split(' ')[1].Contains(textBox1.Text))
+                            textBox2.AppendText(line + "\r\n");
+                    }
+                    if (comboBox2.SelectedIndex == 1)
+                    {
+                        if (line.Split(' ')[1].StartsWith(textBox1.Text))
+                            textBox2.AppendText(line + "\r\n");
+                    }
+                }
+                if (comboBox1.SelectedIndex == 2)
+                {
+                    if (comboBox2.SelectedIndex == 0)
+                    {
+                        if (textBox1.Text == line.Split(' ')[2])
+                            textBox2.AppendText(line + "\r\n");
+                    }
+                    if (comboBox2.SelectedIndex == 2)
+                    {
+                        if (line.Split(' ')[2].Contains(textBox1.Text))
+                            textBox2.AppendText(line + "\r\n");
+                    }
+                    if (comboBox2.SelectedIndex == 1)
+                    {
+                        if (line.Split(' ')[2].StartsWith(textBox1.Text))
+                            textBox2.AppendText(line + "\r\n");
+                    }
+                }
+            }
+            cmd.ExecuteNonQuery();
+
+            myConn.Close();
+
+
+            /*string[] lines = System.IO.File.ReadAllLines(@"C:\Users\student\Desktop\uczen.txt");
             textBox2.Text = "";
             foreach (string line in lines)
             {
@@ -83,7 +157,7 @@ namespace PLIKI_TEKSTOWE
                             textBox2.AppendText(line + "\r\n");
                     }
                 }
-            }
+            }*/
         }
 
         private void button2_Click(object sender, EventArgs e)

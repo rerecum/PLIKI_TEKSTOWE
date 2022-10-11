@@ -82,13 +82,16 @@
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+
+
+          /*  string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
             // zapisywanie do pliku
             using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(docPath, "uczen.txt"), true))
             {
                 outputFile.WriteLine(textBox3.Text + " " + textBox4.Text + " " + textBox5.Text);
-            }
+            } */
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)

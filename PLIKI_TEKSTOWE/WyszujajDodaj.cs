@@ -89,7 +89,7 @@ namespace PLIKI_TEKSTOWE
         private void button2_Click(object sender, EventArgs e)
         {
 
-            string myConnection = "datasource=XXX;port=XXX;username=XXX;pass=XXX";
+            string myConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\student\\source\\repos\\rerecum\\PLIKI_TEKSTOWE\\PLIKI_TEKSTOWE\\Database2.mdf;Integrated Security=True";
             SqlConnection myConn = new SqlConnection(myConnection);
             SqlDataAdapter myDataAdapter = new SqlDataAdapter();
             SqlCommandBuilder cb = new SqlCommandBuilder(myDataAdapter);
@@ -97,7 +97,7 @@ namespace PLIKI_TEKSTOWE
             DataSet ds = new DataSet();
 
             SqlCommand cmd = new SqlCommand(myConnection);
-            cmd.CommandText = "INSERT INTO Table(Imie, Nazwisko, Klasa) values ('" + imie + "','" + nazwisko + "','" + klasa + "')";
+            cmd.CommandText = "INSERT INTO Table(Imie, Nazwisko, Klasa) values ('" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "')";
             cmd.ExecuteNonQuery();
 
             myConn.Close();

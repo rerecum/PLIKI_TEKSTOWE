@@ -174,7 +174,7 @@ namespace PLIKI_TEKSTOWE
 
             SqlCommand cmd = new SqlCommand(myConnection);
             cmd.Connection = myConn;
-            cmd.CommandText = "INSERT INTO [Table](Imię, Nazwisko, Klasa) values ('" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "')";
+            cmd.CommandText = "INSERT INTO [Table](Imie, Nazwisko, Klasa) values ('" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "')";
             cmd.ExecuteNonQuery();
 
             myConn.Close();

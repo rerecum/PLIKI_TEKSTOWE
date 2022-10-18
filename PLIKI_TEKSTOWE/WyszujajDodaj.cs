@@ -41,7 +41,7 @@ namespace PLIKI_TEKSTOWE
 
             while (reader.Read())
             {
-                string line = $"{reader[""]}" 
+                string line = $"{reader["Imie"]} {reader["Nazwisko"]} {reader["Klasa"]}";
                 if (comboBox1.SelectedIndex == 0)
                 {
                     if (comboBox2.SelectedIndex == 0)

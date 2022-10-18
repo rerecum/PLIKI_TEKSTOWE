@@ -39,6 +39,8 @@ namespace PLIKI_TEKSTOWE
 
             var reader = cmd.ExecuteReader();
 
+            textBox2.Text = "";
+
             while (reader.Read())
             {
                 string line = $"{reader["Imie"]} {reader["Nazwisko"]} {reader["Klasa"]}";

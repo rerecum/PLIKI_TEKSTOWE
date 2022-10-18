@@ -34,11 +34,14 @@ namespace PLIKI_TEKSTOWE
             myConn.Open();
             DataSet ds = new DataSet();
 
-            SqlCommand cmd = new SqlCommand(myConnection);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [Table]", myConn);
             cmd.Connection = myConn;
 
-            cmd.ExecuteQuery() = "SELECT * FROM [Table]" (string line in lines)
+            var reader = cmd.ExecuteReader();
+
+            while (reader.Read())
             {
+                string line = $"{reader[""]}" 
                 if (comboBox1.SelectedIndex == 0)
                 {
                     if (comboBox2.SelectedIndex == 0)
